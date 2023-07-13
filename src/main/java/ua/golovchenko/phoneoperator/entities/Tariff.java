@@ -1,15 +1,31 @@
-package ua.golovchenko.entities;
+package ua.golovchenko.phoneoperator.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "tariffs")
 public class Tariff {
+    @Override
+    public String toString() {
+        return "Tariff{" +
+                "tariffName='" + tariffName + '\'' +
+                ", price=" + price +
+                ", internetTraffic=" + internetTraffic +
+                ", callsLimit=" + callsLimit +
+                ", smsLimit=" + smsLimit +
+                ", abonentList=" + abonentList +
+                '}';
+    }
+
     @Id
     @Column(name = "tariff_name")
     private String tariffName;
