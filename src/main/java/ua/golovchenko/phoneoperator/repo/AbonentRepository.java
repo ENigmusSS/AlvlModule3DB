@@ -9,4 +9,7 @@ public interface AbonentRepository extends GenericRepository<Abonent>{
     List<Abonent> getTop5Callers();
     List<Abonent> getTop5Traffic();
     List<Abonent> getTop5Texters();
+
+    void compareServicePopularity();
+
 }
