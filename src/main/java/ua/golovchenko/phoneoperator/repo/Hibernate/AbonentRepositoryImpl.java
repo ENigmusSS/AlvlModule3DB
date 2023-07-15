@@ -52,7 +52,7 @@ public class AbonentRepositoryImpl extends GenericRepositoryImpl<Abonent> implem
 
     private List<Abonent> getTop5(String order) {
         try (EntityManager entityManager = HibernateUtils.getEntityManager()) {
-            TypedQuery<Abonent> query = entityManager.createQuery("from Abonents order by :order", aClass);
+            TypedQuery<Abonent> query = entityManager.createQuery("from Abonents order by :order desc ", aClass);
             query.setParameter("order", order);
             query.setMaxResults(5);
             return query.getResultList();
