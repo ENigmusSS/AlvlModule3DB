@@ -55,7 +55,7 @@ public class Abonent {
     @ManyToMany(cascade = CascadeType.DETACH)
     @JoinTable(
             name = "Abonent_Device",
-            joinColumns = @JoinColumn(name = "abonent_nubder"),
+            joinColumns = @JoinColumn(name = "abonent_number"),
             inverseJoinColumns = @JoinColumn(name = "model")
     )
     Set<Device> devices = new HashSet<>();
