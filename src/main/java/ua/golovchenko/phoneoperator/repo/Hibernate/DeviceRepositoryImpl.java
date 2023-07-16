@@ -15,7 +15,7 @@ public class DeviceRepositoryImpl extends GenericRepositoryImpl<Device> implemen
     @Override
     public Device findMostPopularDevice() {
         try (EntityManager entityManager = HibernateUtils.getEntityManager()){
-            TypedQuery<Device> query = entityManager.createQuery("from Devices where max(count(abonentSet) ) ", aClass);
+            TypedQuery<Device> query = entityManager.createQuery( ) ", aClass);
         }
     }
 }
