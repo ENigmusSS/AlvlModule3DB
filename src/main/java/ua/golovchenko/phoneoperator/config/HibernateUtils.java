@@ -30,7 +30,7 @@ public class HibernateUtils {
     }
 
     private static void configureEntityManager() {
-        EntityManagerFactory factory = createEntityManagerFactory("jdbc-hiber");
+        EntityManagerFactory factory = createEntityManagerFactory("moduleDB");
         entityManager = factory.createEntityManager();
     }
 
