@@ -6,7 +6,6 @@ import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import ua.golovchenko.phoneoperator.config.HibernateUtils;
-import ua.golovchenko.phoneoperator.entities.Abonent;
 import ua.golovchenko.phoneoperator.entities.SMS;
 import ua.golovchenko.phoneoperator.repo.SMSRepository;
 
@@ -16,8 +15,9 @@ public class SMSRepositoryImpl extends GenericRepositoryImpl<SMS> implements SMS
     protected void init() {
         aClass = SMS.class;
     }
+
     protected static long getSMSStorageSize() {
-        try (EntityManager entityManager = HibernateUtils.getEntityManager()){
+        try (EntityManager entityManager = HibernateUtils.getEntityManager()) {
             TypedQuery<Long> query = entityManager.createQuery("select count(*) from SMS_Storage ", Long.class);
             return query.getSingleResult();
         }
@@ -25,12 +25,13 @@ public class SMSRepositoryImpl extends GenericRepositoryImpl<SMS> implements SMS
 
     @Override
     public List<SMS> searchBySignature(String signature) {
-        try (EntityManager entityManager = HibernateUtils.getEntityManager()){
+        try (EntityManager entityManager = HibernateUtils.getEntityManager()) {
             TypedQuery<SMS> query = entityManager.createQuery("from SMS_Storage where text like %:signature%", aClass);
             query.setParameter("signature", signature);
             return query.getResultList();
         }
     }
+
     @Override
     public SMS getById(String id) {
         try (EntityManager entityManager = HibernateUtils.getEntityManager()) {

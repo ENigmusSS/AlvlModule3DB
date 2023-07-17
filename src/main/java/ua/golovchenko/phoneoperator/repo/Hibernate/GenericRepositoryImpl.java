@@ -48,6 +48,7 @@ public abstract class GenericRepositoryImpl<T> implements GenericRepository<T> {
         entityManager.flush();
         transaction.commit();
     }
+
     @Override
     public void delete(T obj) {
         EntityManager entityManager = HibernateUtils.getEntityManager();

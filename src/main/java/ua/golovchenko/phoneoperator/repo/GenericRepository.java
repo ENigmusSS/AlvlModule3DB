@@ -8,5 +8,6 @@ public interface GenericRepository<T> {
     List<T> getAll();
 
     void save(T obj);
+
     void delete(T obj);
 }
