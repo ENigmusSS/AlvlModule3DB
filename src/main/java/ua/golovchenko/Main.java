@@ -11,11 +11,13 @@ import ua.golovchenko.phoneoperator.repo.TariffRepository;
 
 import java.util.Scanner;
 
+import static ua.golovchenko.phoneoperator.FakeBaseInit.fakeBaseInit;
+
 public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-
+        fakeBaseInit();
         while (true) {
             try {
                 mainMenu();

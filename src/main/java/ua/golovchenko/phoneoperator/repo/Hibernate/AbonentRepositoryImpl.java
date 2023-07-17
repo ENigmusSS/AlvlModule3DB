@@ -28,7 +28,7 @@ public class AbonentRepositoryImpl extends GenericRepositoryImpl<Abonent> implem
 
     @Override
     public List<Abonent> getTop5Texters() {
-        return getTop5("smsLog.size");
+        return getTop5("count(smsLog)");
     }
 
     @Override

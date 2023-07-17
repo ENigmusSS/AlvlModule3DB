@@ -8,6 +8,7 @@
         <class>ua.golovchenko.phoneoperator.entities.Tariff</class>
         <class>ua.golovchenko.phoneoperator.entities.Abonent</class>
         <class>ua.golovchenko.phoneoperator.entities.SMS</class>
+        <class>ua.golovchenko.phoneoperator.entities.Device</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>
             <property name="hibernate.connection.driver_class" value="org.mariadb.jdbc.Driver"/>
