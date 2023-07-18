@@ -7,7 +7,6 @@ import org.hibernate.cfg.Configuration;
 import ua.golovchenko.phoneoperator.entities.Abonent;
 import ua.golovchenko.phoneoperator.entities.Device;
 import ua.golovchenko.phoneoperator.entities.SMS;
-
 import ua.golovchenko.phoneoperator.entities.Tariff;
 
 import static jakarta.persistence.Persistence.createEntityManagerFactory;

@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDateTime;
 
@@ -28,8 +27,7 @@ public class SMS {
 
     @Column(name = "SMS_ID")
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDgenerator")
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String sms_ID;
     @ManyToOne
     @JoinColumn(name = "abonent_number")

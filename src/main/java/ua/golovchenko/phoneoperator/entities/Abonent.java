@@ -46,7 +46,7 @@ public class Abonent {
     @JoinColumn(name = "tariff_name")
     private Tariff tariff;
     @Column(name = "sms_log")
-    @OneToMany(mappedBy = "abonent_number", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "abonent", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     private List<SMS> smsLog;
     @Column(name = "calls_length")
     private long callsLength;
@@ -55,7 +55,7 @@ public class Abonent {
     @ManyToMany(cascade = CascadeType.DETACH)
     @JoinTable(
             name = "Abonent_Device",
-            joinColumns = @JoinColumn(name = "abonent_number"),
+            joinColumns = @JoinColumn(name = "abonent"),
             inverseJoinColumns = @JoinColumn(name = "model")
     )
     Set<Device> devices = new HashSet<>();

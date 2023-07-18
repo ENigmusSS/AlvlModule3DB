@@ -20,4 +20,12 @@ public class Device {
     private String model;
     @ManyToMany(mappedBy = "devices")
     Set<Abonent> abonentSet = new HashSet<>();
+
+    @Override
+    public String toString() {
+        return "Device{" +
+                "model='" + model + '\'' +
+                ", abonentSet=" + abonentSet +
+                '}';
+    }
 }

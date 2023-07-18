@@ -1,5 +1,6 @@
 package ua.golovchenko.phoneoperator;
 
+import ua.golovchenko.phoneoperator.config.HibernateUtils;
 import ua.golovchenko.phoneoperator.entities.Abonent;
 import ua.golovchenko.phoneoperator.entities.Device;
 import ua.golovchenko.phoneoperator.entities.SMS;
@@ -7,6 +8,7 @@ import ua.golovchenko.phoneoperator.entities.Tariff;
 import ua.golovchenko.phoneoperator.repo.AbonentRepository;
 import ua.golovchenko.phoneoperator.repo.DeviceRepository;
 import ua.golovchenko.phoneoperator.repo.Hibernate.AbonentRepositoryImpl;
+import ua.golovchenko.phoneoperator.repo.Hibernate.DeathStar;
 import ua.golovchenko.phoneoperator.repo.Hibernate.DeviceRepositoryImpl;
 import ua.golovchenko.phoneoperator.repo.Hibernate.TariffRepositoryImpl;
 import ua.golovchenko.phoneoperator.repo.TariffRepository;
@@ -24,6 +26,7 @@ public class FakeBaseInit {
     private static Random random = new Random();
 
     public static void fakeBaseInit() {
+        DeathStar.destroy();
         createTariffs();
         createDevices();
         createAbonents();

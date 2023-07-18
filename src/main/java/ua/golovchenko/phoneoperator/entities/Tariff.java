@@ -12,7 +12,7 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "tariffs")
+@Entity(name = "Tariffs")
 public class Tariff {
     @Override
     public String toString() {

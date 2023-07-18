@@ -1,4 +1,4 @@
-package ua.golovchenko;
+package ua.golovchenko.phoneoperator;
 
 import ua.golovchenko.phoneoperator.repo.AbonentRepository;
 import ua.golovchenko.phoneoperator.repo.DeviceRepository;
@@ -17,7 +17,6 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        fakeBaseInit();
         while (true) {
             try {
                 mainMenu();
@@ -28,6 +27,7 @@ public class Main {
     }
 
     private static void mainMenu() throws IllegalArgumentException {
+        System.out.println("For reinitialize Base press 0");
         System.out.println("For Abonents base access press 1");
         System.out.println("For Tariffs base access press 2");
         System.out.println("For SMS log access press 3");
@@ -38,6 +38,7 @@ public class Main {
             case 2 -> tariffBaseAccess();
             case 3 -> messageLogAccess();
             case 4 -> deviceBaseAccess();
+            case 0 -> fakeBaseInit();
             default -> throw new IllegalArgumentException("Invalid command");
         }
     }
